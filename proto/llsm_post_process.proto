@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service LLSMPostProcess {
+    rpc GetList(Empty) returns (AvailableServices) {}
+
+    rpc GetZStackMaxIntensity(NDArray) returns (NDArray){}
+
+}
+
+message AvailableServices {
+    repeated string services = 1;
+}
+
+message Empty {
+
+}
+
+message NDArray {
+    bytes ndarray = 1;
+}
